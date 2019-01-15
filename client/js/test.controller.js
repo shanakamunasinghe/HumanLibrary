@@ -1,9 +1,3 @@
-/**
-* Real Time chatting app
-* @author Shashank Tiwari
-*/
-
-
 // Connect the user to socket server
 //appService.connectSocketServer(UserId);
 'user strict';

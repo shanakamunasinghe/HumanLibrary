@@ -1,8 +1,3 @@
-/**
-* Real Time chatting app
-* @author Shashank Tiwari
-*/
-
 'user strict';
 const DB = require('./db');
 
