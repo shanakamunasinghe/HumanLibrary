@@ -68,6 +68,12 @@
                                     placeholder="Enter password"
                                     ng-model="data.regPassword">
                             </div>
+                            <form>
+                                <div><label for="Type">Select your category</label></div>
+                                <input type="radio" ng-model="data.Type" value="1">Advisor
+                                <input type="radio" ng-model="data.Type" value="0">User
+                            </form>
+                            
                             <button class="btn btn-primary" ng-click="registerUser()">Register</button>
                         </div>
                     </uib-tab>
