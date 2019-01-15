@@ -46,6 +46,34 @@ class Socket{
                 }
             });
             /**
+            * get advisors list
+            */
+            socket.on('advisor-list', async (userId) => {
+
+                let advisorListResponse = {};
+ 
+                 if (userId === '' && (typeof userId !== 'string' || typeof userId !== 'number')) {
+ 
+                    advisorListResponse.error = true;
+                    advisorListResponse.message = `User does not exits.`;
+                     
+                     this.io.emit('advisor-list-response',advisorListResponse);
+                 }else{
+                     const result = await helper.getAdvisorList(userId);
+                     this.io.to(socket.id).emit('advisor-list-response', {
+                         error: result !== null ? false : true,
+                         singleUser: false,
+                         advisorList: result.advisorlist
+                     });
+ 
+                     socket.broadcast.emit('advisor-list-response', {
+                         error: result !== null ? false : true,
+                         singleUser: true,
+                         advisorList: result.userinfo
+                     });
+                 }
+             });
+            /**
             * send the messages to the user
             */
             socket.on('add-message', async (data) => {

@@ -10,6 +10,9 @@ app.controller('authController', function ($scope, $location, $timeout, appServi
     $scope.data = {
         regUsername : '',
         regPassword : '',
+        Type : '',
+        gender: '',
+        family: '',
         usernameAvailable : false,
         loginUsername : '',
         loginPassword : ''
@@ -54,7 +57,10 @@ app.controller('authController', function ($scope, $location, $timeout, appServi
             url: '/registerUser',
             params: {
                 'username': $scope.data.regUsername,
-                'password': $scope.data.regPassword
+                'password': $scope.data.regPassword,
+                'Type': $scope.data.Type,
+                'gender': $scope.data.gender,
+                'family': $scope.data.family
             }
         })
         .then((response) => {

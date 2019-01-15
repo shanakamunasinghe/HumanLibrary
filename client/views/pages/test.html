@@ -1,16 +1,33 @@
 <div class="test-page">
     <!-- Home page header starts -->
-    <div class="test-header">
-        <p class="welcome-user">Welcome {{ data.userID }}</p>
-        <a class="welcome-user href="">Your chats</a>
-        <span class="logout-user" ng-click="logout()">
-            <i class="fa fa-power-off" aria-hidden="true"></i>
-        </span>        
-    </div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-def ">
+            <div class="container">
+                <a class="navbar-brand" href="#">ediCal</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+          
+                <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                  <ul class="navbar-nav mr-auto">
+                    
+                  </ul>
+                  <div class="form-inline my-2 my-lg-0">
+                        <ul class="navbar-nav mr-auto dropdown-menu-right">
+                        <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle " href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hi {{ data.username }}</a>
+                                <div class="dropdown-menu" aria-labelledby="dropdown01">
+                                  <a class="dropdown-item"  ng-click="logout()" href="#">Logout</a>
+                                </div>
+                              </li>
+                              </ul>
+                  </div>
+                </div>
+            </div>
+              </nav>
     <!-- Home page header ends -->
 
     <!-- Home page body start -->
-    <div class="test-body">
+    <div class="test-body container">
         <div class="row">
             <!-- Message Area Markup starts -->
             <div class="col-md-8">
@@ -40,22 +57,21 @@
 
             <!-- Chat list Markup starts -->
             <div class="col-md-4">
-                <div class="chat-list-container">
-                    <p class="chat-list-heading"><i class="fa fa-list" aria-hidden="true"></i> <span >Online users</span> </p>
-                    <div class="chat-list">
-                        <ul class="list-group" ng-if="data.chatlist.length > 0">
-                            <li class="list-group-item"
-                                ng-repeat="friend in data.chatlist"
-                                ng-click="selectFriendToChat(friend.id)"
-                                ng-class="{'active':friend.id == data.selectedFriendId}"
-                            >{{friend.username}}</li>
-                        </ul>
-                        <div class="alert alert-info" ng-if="data.chatlist.length === 0">
-                            <strong>No one is online to chat.</strong>
-                        </div>
-                    </div>                    
+                    <div class="chat-list-container">
+                        <div class="chat-list-heading"><i class="fa fa-circle flashit" aria-hidden="true"></i> <span >Online</span> </div>
+                        <div class="chat-list">
+                            <ul class="list-group" ng-if="data.chatlist.length > 0">
+                                <li class="list-group-item" ng-repeat="friend in data.chatlist"  ng-click="selectFriendToChat(friend.id)"  ng-class="{'active':friend.id == data.selectedFriendId}" >
+                                    <img src="https://placehold.it/50x50" class="rounded-circle"> {{friend.username}}
+                                    <span class="badge badge-info" ng-hide="friend.type">Advisor</span>
+                                </li>
+                            </ul>
+                            <div class="alert alert-info" ng-if="data.chatlist.length === 0">
+                                <strong>No one is online to chat.</strong>
+                            </div>
+                        </div>                    
+                    </div>
                 </div>
-            </div>
             <!-- Chat List Markup ends -->
 
         </div>

@@ -15,9 +15,11 @@ app.controller('homeController', function ($scope, $routeParams, $location, appS
     $scope.data = {
         username: '',
         chatlist: [],
+        advisorlist: [],
         selectedFriendId: null,
         selectedFriendName: null,
-        messages: []
+        messages: [],
+        userId:UserId
     };
 
     appService.connectSocketServer(UserId);
@@ -62,6 +64,42 @@ app.controller('homeController', function ($scope, $routeParams, $location, appS
                     }
                 } else {
                     alert(`Faild to load Chat list`);
+                }
+            });
+        });
+
+        appService.socketEmit(`advisor-list`, UserId);
+        appService.socketOn('advisor-list-response', (response) => {
+            $scope.$apply( () =>{
+                if (!response.error) {
+                    if (response.singleUser) {
+                        /* 
+                        * Removing duplicate user from chat list array
+                        */
+                        if ($scope.data.advisorlist.length > 0) {
+                            $scope.data.advisorlist = $scope.data.advisorlist.filter(function (obj) {
+                                return obj.id !== response.advisorList.id;
+                            });
+                        }
+                        /* 
+                        * Adding new online user into chat list array
+                        */
+                        $scope.data.advisorlist.push(response.advisorList);
+                    } else if (response.userDisconnected) {
+                        /* 
+                        * Removing a user from chat list, if user goes offline
+                        */
+                        $scope.data.advisorlist = $scope.data.advisorlist.filter(function (obj) {
+                            return obj.socketid !== response.socketId;
+                        });
+                    } else {
+                        /* 
+                        * Updating entire chatlist if user logs in
+                        */
+                        $scope.data.advisorlist = response.advisorList;
+                    }
+                } else {
+                    alert(`Faild to load Advisor list`);
                 }
             });
         });

@@ -68,6 +68,31 @@
                                     placeholder="Enter password"
                                     ng-model="data.regPassword">
                             </div>
+                            <form>
+                                <div><label for="gender">Gender</label></div>
+                                <input type="radio" ng-model="data.gender" value="M">Male
+                                <input type="radio" ng-model="data.gender" value="F">Female
+                            </form>
+                            <form>
+                                <div><label for="Type">Select your category</label></div>
+                                <input type="radio" ng-model="data.Type" value="1" ng-checked="data.Type==1" ng-init= "data.Type==1" ng-click= "data.Type==1">Advisor
+                                <input type="radio" ng-model="data.Type" value="0" ng-checked="data.Type==0" ng-init= "data.Type==0" ng-click= "data.Type==0">User
+                            </form>
+                            <div  ng-if="data.Type==1">
+                                <form >
+                                    <label>Family:
+                                      <input type="checkbox" ng-model="data.family">
+                                    </label><br/>
+                                </form>
+                            </div>
+                            <div  ng-if="data.Type==0" class="ng-hide">
+                                <form >
+                                    <label>Family:
+                                      <input type="checkbox" ng-model="data.family" checked="checked">
+                                    </label><br/>
+                                </form>
+                            </div>
+                            
                             <button class="btn btn-primary" ng-click="registerUser()">Register</button>
                         </div>
                     </uib-tab>

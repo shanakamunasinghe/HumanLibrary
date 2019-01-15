@@ -42,7 +42,10 @@ class Routes{
 			const registrationResponse = {}
 			const data = {
 				username : (request.body.username).toLowerCase(),
-				password : request.body.password
+				password : request.body.password,
+				Type : request.body.Type,
+				gender : request.body.gender,
+				family : request.body.family
 			};			
 			if(data.username === '') {
 	            registrationResponse.error = true;
@@ -52,7 +55,23 @@ class Routes{
 	            registrationResponse.error = true;
 	            registrationResponse.message = `password cant be empty.`;
 	            response.status(412).json(registrationResponse);
-	        }else{	        	
+	        }else if(data.Type === ''){				            
+	            registrationResponse.error = true;
+	            registrationResponse.message = `You should select a type.`;
+	            response.status(412).json(registrationResponse);
+	        }else if(data.gender === ''){				            
+	            registrationResponse.error = true;
+	            registrationResponse.message = `You should select gender.`;
+	            response.status(412).json(registrationResponse);
+			}
+			else{
+				if(data.family === ''){	
+					if(data.Type === '1'){				            
+						data.family = 'false';
+					}else{
+						data.family = 'true';
+					}
+				}	        	
 				const result = await helper.registerUser( data );
 				if (result === null) {
 					registrationResponse.error = true;
