@@ -1,8 +1,3 @@
-/**
-* Real Time chatting app
-* @author Shashank Tiwari
-*/
-
 'use strict';
 
 const helper = require('./helper');
