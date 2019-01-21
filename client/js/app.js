@@ -18,6 +18,11 @@ app.config(function ($routeProvider, $locationProvider) {
         .when('/test/:userId', {
             templateUrl: '/views/pages/test.html',
             controller: 'testController'
+        })
+ 
+        .when('/change/:userId', {
+            templateUrl: '/views/pages/change.html',
+            controller: 'changeController'
         });
  
     // use the HTML5 History API
@@ -27,3 +32,4 @@ app.config(function ($routeProvider, $locationProvider) {
 app.factory('appService', ($http) => {
     return new AppService($http)
 });
+
