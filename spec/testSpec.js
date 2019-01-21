@@ -39,7 +39,7 @@ describe("test_registerUser", function(){
         };
         const registrationResponse = await app.registerUser(data2);
         expect(registrationResponse).not.toBe(null);
-    });
+    });	
 });
 
 /**
@@ -48,19 +48,11 @@ describe("test_registerUser", function(){
 describe("test_login", function(){
     it("Login - Correct inputs. This should not give errors",async function() {
         const data1 = {
-            username : "sew",
-            password : "sew",
+            username : "as",
+            password : "as",
         };
         const response = await app.loginUser(data1);
         expect(response).not.toBe(null);
-    }); 
-    it("Login - Incorrect password. This should give errors",async function() {
-        const data1 = {
-            username : "sew",
-            password : "sewq",
-        };
-        const response = await app.loginUser(data1);
-        expect(response.length).toBe(0);
     }); 
     it("Login - null username. This should give errors",async function() {
         const data1 = {
@@ -88,4 +80,37 @@ describe("test_login", function(){
     }); 
     
     
+});
+
+/**
+*  end to end - TEST FOR 
+*	login -> set_session -> session_check-online -> check whether logged out -> logout -> reset_session -> session_check-offline
+*/
+describe("test_", function(){
+	it("User login.",async function() {
+        const data1 = {
+            username : "tom",
+            password : "tom",
+        };
+        const response = await app.loginUser(data1);
+        expect(response).not.toBe(null);
+    });
+	it("set socket. Going online.",async function() {
+        const response = await app.addSocketId(68, 12345);
+        expect(response).not.toBe(null);
+    });	
+    it("User should be available online. return username",async function() {
+        const data = await app.userSessionCheck(68)
+        expect(data).toBe('tom');
+    });    
+    it("check whether user logged out. not logged out. return Y",async function() {
+        const data = await app.isUserLoggedOut(12345)
+        expect(data[0]['online']).toEqual('Y');
+    });
+	it("User logging out",async function() {
+        const data = await app.logoutUser(12345)
+        expect(data).not.toBe(null);
+    });
+	
+	
 });

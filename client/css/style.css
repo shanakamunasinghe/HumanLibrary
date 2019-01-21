@@ -190,10 +190,10 @@ h3{
 	transition: all ease-in-out 400ms;
 
 }
-.advisor-male{
+.advisor-male1{
 	width: 160px;
 	height: 220px;
-	background-image: url(../img/user.jpg);
+	background-image: url(../img/user-01.jpg);
 	background-size: cover;
 	border-radius: 5px;
 	margin-bottom: 15px;
@@ -201,10 +201,120 @@ h3{
 	transition: all ease-in-out 400ms;
 	
 }
-.advisor-female{
+.advisor-male2{
 	width: 160px;
 	height: 220px;
-	background-image: url(../img/user1.jpg);
+	background-image: url(../img/user-02.jpg);
+	background-size: cover;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	transition: all ease-in-out 400ms;
+	
+}
+.advisor-male3{
+	width: 160px;
+	height: 220px;
+	background-image: url(../img/user-03.jpg);
+	background-size: cover;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	transition: all ease-in-out 400ms;
+	
+}
+.advisor-male4{
+	width: 160px;
+	height: 220px;
+	background-image: url(../img/user-04.jpg);
+	background-size: cover;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	transition: all ease-in-out 400ms;
+	
+}
+.advisor-male5{
+	width: 160px;
+	height: 220px;
+	background-image: url(../img/user-05.jpg);
+	background-size: cover;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	transition: all ease-in-out 400ms;
+	
+}
+.advisor-male6{
+	width: 160px;
+	height: 220px;
+	background-image: url(../img/user-06.jpg);
+	background-size: cover;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	transition: all ease-in-out 400ms;
+	
+}
+.advisor-female1{
+	width: 160px;
+	height: 220px;
+	background-image: url(../img/user-07.jpg);
+	background-size: cover;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	transition: all ease-in-out 400ms;
+	
+}
+.advisor-female2{
+	width: 160px;
+	height: 220px;
+	background-image: url(../img/user-08.jpg);
+	background-size: cover;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	transition: all ease-in-out 400ms;
+	
+}
+.advisor-female3{
+	width: 160px;
+	height: 220px;
+	background-image: url(../img/user-09.jpg);
+	background-size: cover;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	transition: all ease-in-out 400ms;
+	
+}
+.advisor-female4{
+	width: 160px;
+	height: 220px;
+	background-image: url(../img/user-10.jpg);
+	background-size: cover;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	transition: all ease-in-out 400ms;
+	
+}
+.advisor-female5{
+	width: 160px;
+	height: 220px;
+	background-image: url(../img/user-11.jpg);
+	background-size: cover;
+	border-radius: 5px;
+	margin-bottom: 15px;
+	overflow: hidden;
+	transition: all ease-in-out 400ms;
+	
+}
+.advisor-female6{
+	width: 160px;
+	height: 220px;
+	background-image: url(../img/user-12.jpg);
 	background-size: cover;
 	border-radius: 5px;
 	margin-bottom: 15px;
@@ -247,6 +357,29 @@ background: linear-gradient(to bottom, #00000036, #000000f0); /* W3C, IE 10+/ Ed
 
 .navbar-brand{
 	font-weight: 600;
+}
+
+
+.login-container{
+	margin-top: 50px;
+}
+
+.btn-def{
+	background: #45c8dc;
+    color: #fff;
+    border: none;
+    margin: 0 auto;
+    display: block;
+    font-size: 14px;
+    border-radius: 30px;
+    padding: 8px 45px;
+}
+.nav-tabs {
+    border-bottom: 1px solid transparent;
+}
+
+section{
+	margin-top: 100px;
 }
 .flashit{
 	

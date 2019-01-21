@@ -36,17 +36,17 @@
             <div class="col-md-8">
                <h3 class="m-t-xs">Advisors List</h3>
 
-               <div class="advisors row" ng-if="data.chatlist.length > 0">
+               <div class="advisors row" ng-if="data.advisorlist.length > 0">
                    <div class="col-md-3"             ng-repeat="friend in data.advisorlist"
                    ng-click="selectFriendToChat(friend.id)"
                    ng-class="{'active':friend.id == data.selectedFriendId}">
-                       <div ng-if="friend.gender == 'M'" class="advisor-male" >
+                       <div ng-if="friend.gender == 'M'" class="advisor-male1" >
                           <div class="overlay">
                               <h4 class="text-center">{{friend.username}}</h4>
                               <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
                           </div>
                        </div>
-                       <div ng-if="friend.gender == 'F'" class="advisor-female" >
+                       <div ng-if="friend.gender == 'F'" class="advisor-female1" >
                         <div class="overlay">
                             <h4 class="text-center">{{friend.username}}</h4>
                             <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
