@@ -248,6 +248,29 @@ background: linear-gradient(to bottom, #00000036, #000000f0); /* W3C, IE 10+/ Ed
 .navbar-brand{
 	font-weight: 600;
 }
+
+
+.login-container{
+	margin-top: 50px;
+}
+
+.btn-def{
+	background: #45c8dc;
+    color: #fff;
+    border: none;
+    margin: 0 auto;
+    display: block;
+    font-size: 14px;
+    border-radius: 30px;
+    padding: 8px 45px;
+}
+.nav-tabs {
+    border-bottom: 1px solid transparent;
+}
+
+section{
+	margin-top: 100px;
+}
 .flashit{
 	
 	  -webkit-animation: flash linear 1s infinite;
