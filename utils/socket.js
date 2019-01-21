@@ -1,7 +1,3 @@
-/**
-* Real Time chatting app
-* @author Shashank Tiwari
-*/
 'use strict';
 
 const path = require('path');

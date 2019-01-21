@@ -1,8 +1,3 @@
-/**
-* Real Time chatting app
-* @author Shashank Tiwari
-*/
-
 'user strict';
 const DB = require('./db');
 
@@ -18,6 +13,7 @@ class Helper{
 
 	async registerUser(params){
 		try {
+			
 			return await this.db.query("INSERT INTO user (`username`,`password`,`online`,`Type`,`gender`,`family`) VALUES (?,?,?,?,?,?)", [params['username'],params['password'],'Y',params['Type'],params['gender'],params['family']]);
 		} catch (error) {
 			console.error(error);

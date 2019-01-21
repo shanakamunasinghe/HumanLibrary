@@ -1,8 +1,3 @@
-/**
-* Real Time chatting app
-* @author Shashank Tiwari
-*/
-
 'user strict';
 
 app.controller('authController', function ($scope, $location, $timeout, appService) {
@@ -64,7 +59,7 @@ app.controller('authController', function ($scope, $location, $timeout, appServi
             }
         })
         .then((response) => {
-            $location.path(`/test/${response.userId}`);
+            $location.path(`/home/${response.userId}`);
             $scope.$apply();
         })
         .catch((error) => {
