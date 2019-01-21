@@ -36,17 +36,77 @@
             <div class="col-md-8">
                <h3 class="m-t-xs">Advisors List</h3>
 
-               <div class="advisors row" ng-if="data.chatlist.length > 0">
+               <div class="advisors row" ng-if="data.advisorlist.length > 0">
                    <div class="col-md-3"             ng-repeat="friend in data.advisorlist"
                    ng-click="selectFriendToChat(friend.id)"
                    ng-class="{'active':friend.id == data.selectedFriendId}">
-                       <div ng-if="friend.gender == 'M'" class="advisor-male" >
+                       <div ng-if="friend.gender == 'M' && friend.id%6 == 0" class="advisor-male1" >
                           <div class="overlay">
                               <h4 class="text-center">{{friend.username}}</h4>
                               <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
                           </div>
                        </div>
-                       <div ng-if="friend.gender == 'F'" class="advisor-female" >
+					   <div ng-if="friend.gender == 'M' && friend.id%6 == 1" class="advisor-male2" >
+                          <div class="overlay">
+                              <h4 class="text-center">{{friend.username}}</h4>
+                              <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
+                          </div>
+                       </div>
+					   <div ng-if="friend.gender == 'M' && friend.id%6 == 2" class="advisor-male3" >
+                          <div class="overlay">
+                              <h4 class="text-center">{{friend.username}}</h4>
+                              <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
+                          </div>
+                       </div>
+					   <div ng-if="friend.gender == 'M' && friend.id%6 == 3" class="advisor-male4" >
+                          <div class="overlay">
+                              <h4 class="text-center">{{friend.username}}</h4>
+                              <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
+                          </div>
+                       </div>
+					   <div ng-if="friend.gender == 'M' && friend.id%6 == 4" class="advisor-male5" >
+                          <div class="overlay">
+                              <h4 class="text-center">{{friend.username}}</h4>
+                              <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
+                          </div>
+                       </div>
+					   <div ng-if="friend.gender == 'M' && friend.id%6 == 5" class="advisor-male6" >
+                          <div class="overlay">
+                              <h4 class="text-center">{{friend.username}}</h4>
+                              <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
+                          </div>
+                       </div>
+                       <div ng-if="friend.gender == 'F' && friend.id%6 == 0" class="advisor-female1" >
+                        <div class="overlay">
+                            <h4 class="text-center">{{friend.username}}</h4>
+                            <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
+                        </div>
+                     </div>
+					 <div ng-if="friend.gender == 'F' && friend.id%6 == 1" class="advisor-female2" >
+                        <div class="overlay">
+                            <h4 class="text-center">{{friend.username}}</h4>
+                            <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
+                        </div>
+                     </div>
+					 <div ng-if="friend.gender == 'F' && friend.id%6 == 2" class="advisor-female3" >
+                        <div class="overlay">
+                            <h4 class="text-center">{{friend.username}}</h4>
+                            <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
+                        </div>
+                     </div>
+					 <div ng-if="friend.gender == 'F' && friend.id%6 == 3" class="advisor-female4" >
+                        <div class="overlay">
+                            <h4 class="text-center">{{friend.username}}</h4>
+                            <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
+                        </div>
+                     </div>
+					 <div ng-if="friend.gender == 'F' && friend.id%6 == 4" class="advisor-female5" >
+                        <div class="overlay">
+                            <h4 class="text-center">{{friend.username}}</h4>
+                            <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
+                        </div>
+                     </div>
+					 <div ng-if="friend.gender == 'F' && "friend.id%6 == 5" class="advisor-female6" >
                         <div class="overlay">
                             <h4 class="text-center">{{friend.username}}</h4>
                             <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
