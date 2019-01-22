@@ -40,7 +40,11 @@ class Routes{
 				password : request.body.password,
 				Type : request.body.Type,
 				gender : request.body.gender,
-				family : request.body.family
+				family : request.body.family,
+				religious: request.body.religious,
+				mentalhealth: request.body.mentalhealth,
+				career: request.body.career,
+				education: request.body.education
 			};			
 			if(data.username === '') {
 	            registrationResponse.error = true;
@@ -66,7 +70,35 @@ class Routes{
 					}else{
 						data.family = 'true';
 					}
-				}	        	
+				}
+				if(data.education === ''){	
+					if(data.Type === '1'){				            
+						data.education = 'false';
+					}else{
+						data.education = 'true';
+					}
+				}
+				if(data.career === ''){	
+					if(data.Type === '1'){				            
+						data.career = 'false';
+					}else{
+						data.career = 'true';
+					}
+				}
+				if(data.mentalhealth === ''){	
+					if(data.Type === '1'){				            
+						data.mentalhealth = 'false';
+					}else{
+						data.mentalhealth = 'true';
+					}
+				}
+				if(data.religious === ''){	
+					if(data.Type === '1'){				            
+						data.religious = 'false';
+					}else{
+						data.religious = 'true';
+					}
+				}
 				const result = await helper.registerUser( data );
 				if (result === null) {
 					registrationResponse.error = true;
