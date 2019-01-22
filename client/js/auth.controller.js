@@ -8,6 +8,10 @@ app.controller('authController', function ($scope, $location, $timeout, appServi
         Type : '',
         gender: '',
         family: '',
+		education: '',
+		career: '',
+		mentalhealth: '',
+		religious: '',
         usernameAvailable : false,
         loginUsername : '',
         loginPassword : ''
@@ -55,7 +59,11 @@ app.controller('authController', function ($scope, $location, $timeout, appServi
                 'password': $scope.data.regPassword,
                 'Type': $scope.data.Type,
                 'gender': $scope.data.gender,
-                'family': $scope.data.family
+                'family': $scope.data.family,
+				'education': $scope.data.education,
+				'career': $scope.data.career,
+				'religious': $scope.data.religious,
+				'mentalhealth': $scope.data.mentalhealth
             }
         })
         .then((response) => {

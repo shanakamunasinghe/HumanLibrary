@@ -3,7 +3,7 @@
 
         <nav class="navbar navbar-expand-md navbar-dark bg-def ">
             <div class="container">
-                <a class="navbar-brand" href="#">ediCal</a>
+                <a class="navbar-brand" href="#">Human Library</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -36,22 +36,136 @@
             <div class="col-md-8">
                <h3 class="m-t-xs">Advisors List</h3>
 
+			   <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chats</a>
+				<hr>
                <div class="advisors row" ng-if="data.advisorlist.length > 0">
                    <div class="col-md-3"             ng-repeat="friend in data.advisorlist"
                    ng-click="selectFriendToChat(friend.id)"
                    ng-class="{'active':friend.id == data.selectedFriendId}">
-                       <div ng-if="friend.gender == 'M'" class="advisor-male1" >
+
+                       <div ng-if="friend.gender == 'M' && friend.id%6 == 0" class="advisor-male1" >
                           <div class="overlay">
                               <h4 class="text-center">{{friend.username}}</h4>
-                              <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
+							  <p ng-if="friend.family == 'true'" class="text-center">Family</p>
+							  <p ng-if="friend.education == 'true'" class="text-center">Education</p>
+							  <p ng-if="friend.mentalhealth == 'true'" class="text-center">Mental Health</p>
+							  <p ng-if="friend.career == 'true'" class="text-center">Career</p>
+							  <p ng-if="friend.religious == 'true'" class="text-center">Religious</p>							  
                           </div>
                        </div>
-                       <div ng-if="friend.gender == 'F'" class="advisor-female1" >
+					   <div ng-if="friend.gender == 'M' && friend.id%6 == 1" class="advisor-male2" >
+                          <div class="overlay">
+                              <h4 class="text-center">{{friend.username}}</h4>
+							  <p ng-if="friend.family == 'true'" class="text-center">Family</p>
+							  <p ng-if="friend.education == 'true'" class="text-center">Education</p>
+							  <p ng-if="friend.mentalhealth == 'true'" class="text-center">Mental Health</p>
+							  <p ng-if="friend.career == 'true'" class="text-center">Career</p>
+							  <p ng-if="friend.religious == 'true'" class="text-center">Religious</p>
+						  </div>
+                       </div>
+					   <div ng-if="friend.gender == 'M' && friend.id%6 == 2" class="advisor-male3" >
+                          <div class="overlay">
+                              <h4 class="text-center">{{friend.username}}</h4>
+							  <p ng-if="friend.family == 'true'" class="text-center">Family</p>
+							  <p ng-if="friend.education == 'true'" class="text-center">Education</p>
+							  <p ng-if="friend.mentalhealth == 'true'" class="text-center">Mental Health</p>
+							  <p ng-if="friend.career == 'true'" class="text-center">Career</p>
+							  <p ng-if="friend.religious == 'true'" class="text-center">Religious</p>
+                          </div>
+                       </div>
+					   <div ng-if="friend.gender == 'M' && friend.id%6 == 3" class="advisor-male4" >
+                          <div class="overlay">
+                              <h4 class="text-center">{{friend.username}}</h4>
+							  <p ng-if="friend.family == 'true'" class="text-center">Family</p>
+							  <p ng-if="friend.education == 'true'" class="text-center">Education</p>
+							  <p ng-if="friend.mentalhealth == 'true'" class="text-center">Mental Health</p>
+							  <p ng-if="friend.career == 'true'" class="text-center">Career</p>
+							  <p ng-if="friend.religious == 'true'" class="text-center">Religious</p>
+                          </div>
+                       </div>
+					   <div ng-if="friend.gender == 'M' && friend.id%6 == 4" class="advisor-male5" >
+                          <div class="overlay">
+                              <h4 class="text-center">{{friend.username}}</h4>
+							  <p ng-if="friend.family == 'true'" class="text-center">Family</p>
+							  <p ng-if="friend.education == 'true'" class="text-center">Education</p>
+							  <p ng-if="friend.mentalhealth == 'true'" class="text-center">Mental Health</p>
+							  <p ng-if="friend.career == 'true'" class="text-center">Career</p>
+							  <p ng-if="friend.religious == 'true'" class="text-center">Religious</p>
+                          </div>						  
+                       </div>
+					   <div ng-if="friend.gender == 'M' && friend.id%6 == 5" class="advisor-male6" >
+
+                          <div class="overlay">
+                              <h4 class="text-center">{{friend.username}}</h4>
+							  <p ng-if="friend.family == 'true'" class="text-center">Family</p>
+							  <p ng-if="friend.education == 'true'" class="text-center">Education</p>
+							  <p ng-if="friend.mentalhealth == 'true'" class="text-center">Mental Health</p>
+							  <p ng-if="friend.career == 'true'" class="text-center">Career</p>
+							  <p ng-if="friend.religious == 'true'" class="text-center">Religious</p>
+                          </div>
+                       </div>
+
+                       <div ng-if="friend.gender == 'F' && friend.id%6 == 0" class="advisor-female1" >
                         <div class="overlay">
-                            <h4 class="text-center">{{friend.username}}</h4>
-                            <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chat</a>
+						      <h4 class="text-center">{{friend.username}}</h4>
+							  <p ng-if="friend.family == 'true'" class="text-center">Family</p>
+							  <p ng-if="friend.education == 'true'" class="text-center">Education</p>
+							  <p ng-if="friend.mentalhealth == 'true'" class="text-center">Mental Health</p>
+							  <p ng-if="friend.career == 'true'" class="text-center">Career</p>
+							  <p ng-if="friend.religious == 'true'" class="text-center">Religious</p>
                         </div>
                      </div>
+					 <div ng-if="friend.gender == 'F' && friend.id%6 == 1" class="advisor-female2" >
+                        <div class="overlay">
+							  <h4 class="text-center">{{friend.username}}</h4>
+							  <p ng-if="friend.family == 'true'" class="text-center">Family</p>
+							  <p ng-if="friend.education == 'true'" class="text-center">Education</p>
+							  <p ng-if="friend.mentalhealth == 'true'" class="text-center">Mental Health</p>
+							  <p ng-if="friend.career == 'true'" class="text-center">Career</p>
+							  <p ng-if="friend.religious == 'true'" class="text-center">Religious</p>
+                        </div>
+                     </div>
+					 <div ng-if="friend.gender == 'F' && friend.id%6 == 2" class="advisor-female3" >
+                        <div class="overlay">
+							<h4 class="text-center">{{friend.username}}</h4>
+							  <p ng-if="friend.family == 'true'" class="text-center">Family</p>
+							  <p ng-if="friend.education == 'true'" class="text-center">Education</p>
+							  <p ng-if="friend.mentalhealth == 'true'" class="text-center">Mental Health</p>
+							  <p ng-if="friend.career == 'true'" class="text-center">Career</p>
+							  <p ng-if="friend.religious == 'true'" class="text-center">Religious</p>
+                        </div>
+                     </div>
+					 <div ng-if="friend.gender == 'F' && friend.id%6 == 3" class="advisor-female4" >
+                        <div class="overlay">
+						<h4 class="text-center">{{friend.username}}</h4>
+							  <p ng-if="friend.family == 'true'" class="text-center">Family</p>
+							  <p ng-if="friend.education == 'true'" class="text-center">Education</p>
+							  <p ng-if="friend.mentalhealth == 'true'" class="text-center">Mental Health</p>
+							  <p ng-if="friend.career == 'true'" class="text-center">Career</p>
+							  <p ng-if="friend.religious == 'true'" class="text-center">Religious</p>
+                        </div>
+                     </div>
+					 <div ng-if="friend.gender == 'F' && friend.id%6 == 4" class="advisor-female5" >
+                        <div class="overlay">
+							<h4 class="text-center">{{friend.username}}</h4>
+							  <p ng-if="friend.family == 'true'" class="text-center">Family</p>
+							  <p ng-if="friend.education == 'true'" class="text-center">Education</p>
+							  <p ng-if="friend.mentalhealth == 'true'" class="text-center">Mental Health</p>
+							  <p ng-if="friend.career == 'true'" class="text-center">Career</p>
+							  <p ng-if="friend.religious == 'true'" class="text-center">Religious</p>
+                        </div>
+                     </div>
+					 <div ng-if="friend.gender == 'F' && "friend.id%6 == 5" class="advisor-female6" >
+                        <div class="overlay">
+							<h4 class="text-center">{{friend.username}}</h4>
+							  <p ng-if="friend.family == 'true'" class="text-center">Family</p>
+							  <p ng-if="friend.education == 'true'" class="text-center">Education</p>
+							  <p ng-if="friend.mentalhealth == 'true'" class="text-center">Mental Health</p>
+							  <p ng-if="friend.career == 'true'" class="text-center">Career</p>
+							  <p ng-if="friend.religious == 'true'" class="text-center">Religious</p>
+                        </div>
+                     </div>
+					 
                    </div>
                </div>
                

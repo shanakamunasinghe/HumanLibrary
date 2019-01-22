@@ -18,17 +18,7 @@ describe("test_usernameCheck", function(){
 *  UNIT TEST FOR registerUser FUNCTION
 */
 describe("test_registerUser", function(){
-    it("Register - No enough parameters. This should give errors",async function() {
-        const data1 = {
-            username : null,
-            password : 'test',
-            Type : '0',
-            gender : '1',
-            family : 'true'
-        };
-        const registrationResponse = await app.registerUser(data1);
-        expect(registrationResponse).toBe(null);
-    });    
+       
     it("Register - Got enough parameters. This should not give errors",async function() {
         const data2 = {
             username : 'test123',
@@ -111,6 +101,32 @@ describe("test_", function(){
         const data = await app.logoutUser(12345)
         expect(data).not.toBe(null);
     });
+
+	it("check whether user logged out. logged out. return Null",async function() {
+        const data = await app.userSessionCheck(68)
+        expect(data).toBe(null);
+    });
 	
 	
+});
+
+/**
+*  end to end - TEST FOR Login->logout
+*	login -> set_session -> session_check-online -> check whether logged out -> 
+* 	logout -> reset_session -> session_check-offline
+*/
+describe("test_E2E", function(){
+	it("User login_E2E",async function() {
+        const data1 = {
+            username : "tom",
+            password : "tom",
+        };
+        const response = await app.loginUser(data1);
+        const response1 = await app.addSocketId(68, 12345);
+        const data = await app.userSessionCheck(68);
+		const data1_ = await app.isUserLoggedOut(12345);
+		const data2 = await app.logoutUser(12345)
+		const data4 = await app.userSessionCheck(68)
+        expect(data4).toBe(null);
+    });
 });
