@@ -35,12 +35,14 @@
             <!-- Message Area Markup starts -->
             <div class="col-md-8">
                <h3 class="m-t-xs">Advisors List</h3>
+
 			   <a class="btn btn-primary center-block" href="test/{{data.userId}}" >View Chats</a>
 				<hr>
                <div class="advisors row" ng-if="data.advisorlist.length > 0">
                    <div class="col-md-3"             ng-repeat="friend in data.advisorlist"
                    ng-click="selectFriendToChat(friend.id)"
                    ng-class="{'active':friend.id == data.selectedFriendId}">
+
                        <div ng-if="friend.gender == 'M' && friend.id%6 == 0" class="advisor-male1" >
                           <div class="overlay">
                               <h4 class="text-center">{{friend.username}}</h4>
@@ -92,6 +94,7 @@
                           </div>						  
                        </div>
 					   <div ng-if="friend.gender == 'M' && friend.id%6 == 5" class="advisor-male6" >
+
                           <div class="overlay">
                               <h4 class="text-center">{{friend.username}}</h4>
 							  <p ng-if="friend.family == 'true'" class="text-center">Family</p>
@@ -101,6 +104,7 @@
 							  <p ng-if="friend.religious == 'true'" class="text-center">Religious</p>
                           </div>
                        </div>
+
                        <div ng-if="friend.gender == 'F' && friend.id%6 == 0" class="advisor-female1" >
                         <div class="overlay">
 						      <h4 class="text-center">{{friend.username}}</h4>
