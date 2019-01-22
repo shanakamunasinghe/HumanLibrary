@@ -1,7 +1,7 @@
 <div class="auth-page">
         <nav class="navbar navbar-expand-md navbar-dark bg-def ">
                 <div class="container">
-                    <a class="navbar-brand" href="#">ediCal</a>
+                    <a class="navbar-brand" href="#">Human Library</a>
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                       <span class="navbar-toggler-icon"></span>
                     </button>
@@ -106,12 +106,36 @@
                                                         <label>Family:
                                                           <input type="checkbox" ng-model="data.family">
                                                         </label><br/>
+														<label>Education:
+                                                          <input type="checkbox" ng-model="data.education">
+                                                        </label><br/>
+														<label>Career:
+                                                          <input type="checkbox" ng-model="data.career">
+                                                        </label><br/>
+														<label>Religious:
+                                                          <input type="checkbox" ng-model="data.religious">
+                                                        </label><br/>
+														<label>Mental Health:
+                                                          <input type="checkbox" ng-model="data.mentalhealth">
+                                                        </label><br/>
                                                     </form>
                                                 </div>
                                                 <div  ng-if="data.Type==0" class="ng-hide">
                                                     <form >
                                                         <label>Family:
                                                           <input type="checkbox" ng-model="data.family" checked="checked">
+                                                        </label><br/>
+														<label>Education:
+                                                          <input type="checkbox" ng-model="data.education" checked="checked">
+                                                        </label><br/>
+														<label>Career:
+                                                          <input type="checkbox" ng-model="data.career" checked="checked">
+                                                        </label><br/>
+														<label>Religious:
+                                                          <input type="checkbox" ng-model="data.religious" checked="checked">
+                                                        </label><br/>
+														<label>Mental Health:
+                                                          <input type="checkbox" ng-model="data.mentalhealth" checked="checked">
                                                         </label><br/>
                                                     </form>
                                                 </div>
@@ -129,7 +153,8 @@
                 <section id="about">
                     <h1>About</h1>
                     <p>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores cupiditate iste illo alias vel commodi repellendus eveniet omnis, fugiat consequatur maxime. Tempore illum iste eius obcaecati excepturi itaque placeat voluptatum?
+                        The Human Library is designed to build a positive framework for conversations that can challenge stereotypes and prejudices through dialogue. The Human Library is a place where real people are on loan to readers. A place where difficult questions are expected, appreciated and answered.
+
                     </p>
                 </section>
             </div>
