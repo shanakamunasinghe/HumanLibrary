@@ -1,100 +1,163 @@
 <div class="auth-page">
-    <div class="container auth-container">
-        <div class="auth">
+        <nav class="navbar navbar-expand-md navbar-dark bg-def ">
+                <div class="container">
+                    <a class="navbar-brand" href="#">Human Library</a>
+
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+              
+                    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+                      <ul class="navbar-nav mr-auto">
+                        
+                      </ul>
+                      <ul class="my-2 my-lg-0 navbar-nav">
+                            <li class="nav-item">
+                                    <a class="nav-link" href="#about">About</a>
+                                  </li>
+                                </ul>
+                    </div>
+                </div>
+                  </nav>
+    <div class="container login-container">
+            <div class="row">
+                <div class="col-md-7">
+                    <img src="img/council.jpg" class="img-fluid">
+                </div>
+                <div class="col-md-5">
+                        <div class="">
  
-            <!-- Auth Page Header Tabs start -->
-            <div class="auth-header">
-                <button type="button" class="btn btn-primary auth-header-btn" ng-click="active = 0">Login</button>
-                <button type="button" class="btn btn-primary auth-header-btn" ng-click="active = 1">Register</button>
-            </div>
-            <!-- Auth Page Header Tabs ends -->
- 
-            <div class="auth-content">
-                <uib-tabset active="active">
-                    <!-- Login Tab starts -->
-                    <uib-tab index="0">
-                        <div class="login">
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="username" 
-                                    class="form-control" 
-                                    id="username" 
-                                    placeholder="Enter username" 
-                                    ng-model="data.loginUsername">
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" 
-                                    class="form-control" 
-                                    id="login-password" 
-                                    placeholder="Enter password" 
-                                    ng-model="data.loginPassword">
-                            </div>
-                            <button class="btn btn-primary" ng-click="loginUser()">Login</button>
-                        </div>
-                    </uib-tab>
-                    <!-- Login Tab ends -->
-                    <!-- Register Tab starts -->
-                    <uib-tab index="1">
-                        <div class="register">
-                            <div class="form-group">
-                                <label for="username">Username</label>
-                                <input type="username" 
-                                    class="form-control" 
-                                    id="username" 
-                                    placeholder="Enter username"
-                                    autocomplete="off"
-                                    ng-model="data.regUsername" 
-                                    ng-keyup="initiateCheckUserName()" 
-                                    ng-keydown="clearCheckUserName()" 
-                                />
-                                <div ng-show='data.usernameAvailable'>
-                                    <br>
-                                    <div class="alert alert-danger" role="alert">
-                                        <strong>{{ data.regUsername }}</strong> Username is already taken.
-                                    </div>
+                                <!-- Auth Page Header Tabs start -->
+                                <div class="auth-header">
+                                    <button type="button" class="btn btn-primary auth-header-btn" ng-click="active = 0">Login</button>
+                                    <button type="button" class="btn btn-primary auth-header-btn" ng-click="active = 1">Register</button>
                                 </div>
-                                
+                                <!-- Auth Page Header Tabs ends -->
+                     
+                                <div class="auth-content">
+                                    <uib-tabset active="active">
+                                        <!-- Login Tab starts -->
+                                        <uib-tab index="0">
+                                            <div class="login">
+                                                <div class="form-group">
+                                                   
+                                                    <input type="username" 
+                                                        class="form-control" 
+                                                        id="username" 
+                                                        placeholder="Enter username" 
+                                                        ng-model="data.loginUsername">
+                                                </div>
+                                                <div class="form-group">
+                                                    
+                                                    <input type="password" 
+                                                        class="form-control" 
+                                                        id="login-password" 
+                                                        placeholder="Enter password" 
+                                                        ng-model="data.loginPassword">
+                                                </div>
+                                                <button class="btn btn-def btn-block" ng-click="loginUser()">Login</button>
+                                            </div>
+                                        </uib-tab>
+                                        <!-- Login Tab ends -->
+                                        <!-- Register Tab starts -->
+                                        <uib-tab index="1">
+                                            <div class="register">
+                                                <div class="form-group">
+                                                    <label for="username">Username</label>
+                                                    <input type="username" 
+                                                        class="form-control" 
+                                                        id="username" 
+                                                        placeholder="Enter username"
+                                                        autocomplete="off"
+                                                        ng-model="data.regUsername" 
+                                                        ng-keyup="initiateCheckUserName()" 
+                                                        ng-keydown="clearCheckUserName()" 
+                                                    />
+                                                    <div ng-show='data.usernameAvailable'>
+                                                        <br>
+                                                        <div class="alert alert-danger" role="alert">
+                                                            <strong>{{ data.regUsername }}</strong> Username is already taken.
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="password">Password</label>
+                                                    <input type="password" 
+                                                        class="form-control" 
+                                                        id="reg-password" 
+                                                        placeholder="Enter password"
+                                                        ng-model="data.regPassword">
+                                                </div>
+                                                <form>
+                                                    <div><label for="gender">Gender</label></div>
+                                                    <input type="radio" ng-model="data.gender" value="M" id="male">
+                                                    <label for="male">Male</label> 
+                                                    <input type="radio" ng-model="data.gender" value="F" id="female"> 
+                                                    <label for="female">Female</label> 
+                                                </form>
+                                              
+                                                <form>
+                                                    <div><label for="Type">Select your category</label></div>
+                                                    <input type="radio" ng-model="data.Type" value="1" ng-checked="data.Type==1" ng-init= "data.Type==1" ng-click= "data.Type==1"> Advisor
+                                                    <input type="radio" ng-model="data.Type" value="0" ng-checked="data.Type==0" ng-init= "data.Type==0" ng-click= "data.Type==0"> User
+                                                </form>
+                                                <div  ng-if="data.Type==1">
+                                                    <form >
+                                                        <label>Family:
+                                                          <input type="checkbox" ng-model="data.family">
+                                                        </label><br/>
+
+														<label>Education:
+                                                          <input type="checkbox" ng-model="data.education">
+                                                        </label><br/>
+														<label>Career:
+                                                          <input type="checkbox" ng-model="data.career">
+                                                        </label><br/>
+														<label>Religious:
+                                                          <input type="checkbox" ng-model="data.religious">
+                                                        </label><br/>
+														<label>Mental Health:
+                                                          <input type="checkbox" ng-model="data.mentalhealth">
+                                                        </label><br/>
+                                                    </form>
+                                                </div>
+                                                <div  ng-if="data.Type==0" class="ng-hide">
+                                                    <form >
+                                                        <label>Family:
+                                                          <input type="checkbox" ng-model="data.family" checked="checked">
+                                                        </label><br/>
+														<label>Education:
+                                                          <input type="checkbox" ng-model="data.education" checked="checked">
+                                                        </label><br/>
+														<label>Career:
+                                                          <input type="checkbox" ng-model="data.career" checked="checked">
+                                                        </label><br/>
+														<label>Religious:
+                                                          <input type="checkbox" ng-model="data.religious" checked="checked">
+                                                        </label><br/>
+														<label>Mental Health:
+                                                          <input type="checkbox" ng-model="data.mentalhealth" checked="checked">
+                                                        </label><br/>
+                                                    </form>
+                                                </div>
+                                                
+                                                <button class="btn btn-def btn-block" ng-click="registerUser()">Register</button>
+                                            </div>
+                                        </uib-tab>
+                                        <!-- Register Tab ends -->
+                                    </uib-tabset>
+                                </div>        
                             </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <input type="password" 
-                                    class="form-control" 
-                                    id="reg-password" 
-                                    placeholder="Enter password"
-                                    ng-model="data.regPassword">
-                            </div>
-                            <form>
-                                <div><label for="gender">Gender</label></div>
-                                <input type="radio" ng-model="data.gender" value="M">Male
-                                <input type="radio" ng-model="data.gender" value="F">Female
-                            </form>
-                            <form>
-                                <div><label for="Type">Select your category</label></div>
-                                <input type="radio" ng-model="data.Type" value="1" ng-checked="data.Type==1" ng-init= "data.Type==1" ng-click= "data.Type==1">Advisor
-                                <input type="radio" ng-model="data.Type" value="0" ng-checked="data.Type==0" ng-init= "data.Type==0" ng-click= "data.Type==0">User
-                            </form>
-                            <div  ng-if="data.Type==1">
-                                <form >
-                                    <label>Family:
-                                      <input type="checkbox" ng-model="data.family">
-                                    </label><br/>
-                                </form>
-                            </div>
-                            <div  ng-if="data.Type==0" class="ng-hide">
-                                <form >
-                                    <label>Family:
-                                      <input type="checkbox" ng-model="data.family" checked="checked">
-                                    </label><br/>
-                                </form>
-                            </div>
-                            
-                            <button class="btn btn-primary" ng-click="registerUser()">Register</button>
-                        </div>
-                    </uib-tab>
-                    <!-- Register Tab ends -->
-                </uib-tabset>
-            </div>        
-        </div>
-    </div>
+                </div>
+            </div>
+            <div class="row">
+                <section id="about">
+                    <h1>About</h1>
+                    <p>
+                        The Human Library is designed to build a positive framework for conversations that can challenge stereotypes and prejudices through dialogue. The Human Library is a place where real people are on loan to readers. A place where difficult questions are expected, appreciated and answered.
+                    </p>
+                </section>
+            </div>
+            </div>
 </div>

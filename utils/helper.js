@@ -14,7 +14,7 @@ class Helper{
 	async registerUser(params){
 		try {
 			
-			return await this.db.query("INSERT INTO user (`username`,`password`,`online`,`Type`,`gender`,`family`) VALUES (?,?,?,?,?,?)", [params['username'],params['password'],'Y',params['Type'],params['gender'],params['family']]);
+			return await this.db.query("INSERT INTO user (`username`,`password`,`online`,`Type`,`gender`,`family`,`career`,`education`,`mentalhealth`,`religious`) VALUES (?,?,?,?,?,?,?,?,?,?)", [params['username'],params['password'],'Y',params['Type'],params['gender'],params['family'],params['career'],params['education'],params['mentalhealth'],params['religious']]);
 		} catch (error) {
 			console.error(error);
 			return null;
@@ -90,7 +90,7 @@ class Helper{
 		try {
 			return Promise.all([
 				this.db.query(`SELECT id,username,online,socketid,Type,gender FROM user WHERE id = ?`, [userId]),
-				this.db.query(`SELECT id,username,online,socketid,Type,gender FROM user WHERE Type = ?`, ['1']),
+				this.db.query(`SELECT id,username,online,socketid,Type,gender,family,education, career, mentalhealth, religious FROM user WHERE Type = ?`, ['1']),
 			]).then( (response) => {
 				return {
 					userinfo : response[0].length > 0 ? response[0][0] : response[0],

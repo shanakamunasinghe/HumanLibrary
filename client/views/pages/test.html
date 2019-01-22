@@ -2,7 +2,7 @@
     <!-- Home page header starts -->
     <nav class="navbar navbar-expand-md navbar-dark bg-def ">
             <div class="container">
-                <a class="navbar-brand" href="#">ediCal</a>
+                <a class="navbar-brand" href="#">Human Library</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -28,6 +28,7 @@
 
     <!-- Home page body start -->
     <div class="test-body container">
+		<hr>
         <div class="row">
             <!-- Message Area Markup starts -->
             <div class="col-md-8">
@@ -41,6 +42,7 @@
                             <li ng-repeat="messagePacket in data.messages"
                                 ng-class="{ 'align-right' : alignMessage(messagePacket.fromUserId) } ">
                                 {{messagePacket.message}}
+                                 
                             </li>
                         </ul>
                     </div>

@@ -101,6 +101,7 @@ describe("test_", function(){
         const data = await app.logoutUser(12345)
         expect(data).not.toBe(null);
     });
+
 	it("check whether user logged out. logged out. return Null",async function() {
         const data = await app.userSessionCheck(68)
         expect(data).toBe(null);
@@ -109,7 +110,13 @@ describe("test_", function(){
 	
 });
 
-describe("test_", function(){
+
+/**
+*  end to end - TEST FOR Login->logout
+*	login -> set_session -> session_check-online -> check whether logged out -> 
+* 	logout -> reset_session -> session_check-offline
+*/
+describe("test_E2E", function(){
 	it("User login_E2E",async function() {
         const data1 = {
             username : "tom",
